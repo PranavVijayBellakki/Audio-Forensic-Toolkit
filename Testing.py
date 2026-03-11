@@ -17,6 +17,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 os.makedirs('static', exist_ok=True)
+os.makedirs('uploads', exist_ok=True)
 #home page
 @app.route('/')
 def home_page():
