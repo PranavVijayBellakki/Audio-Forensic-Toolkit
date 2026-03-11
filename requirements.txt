@@ -1,0 +1,7 @@
+Flask
+gunicorn
+librosa
+numpy
+matplotlib
+tinytag
+fpdf
