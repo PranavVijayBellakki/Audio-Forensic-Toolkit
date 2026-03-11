@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore user audio uploads
+uploads/
+
+# Ignore all stray audio files in any folder
+*.mp3
+*.wav
+*.ogg
+*.flac
