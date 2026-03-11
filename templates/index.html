@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Forensic Toolkit | Digital Audio Notary</title>
+    <style>
+        :root {
+            --bg-dark: #070B19;
+            --surface: #111827;
+            --accent-blue: #3e77d3;
+            --accent-cyan: #06B6D4;
+            --text-main: #9CA3AF;
+            --text-light: #F3F4F6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(17, 24, 39, 0.9);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px;
+            background: radial-gradient(circle at center, #1e293b 0%, #070b19 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Next Page Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--text-light);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(6, 182, 212, 0.6);
+        }
+
+        /* Problem Details Section */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--surface);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .card h3 {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3::before {
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent-cyan);
+            border-radius: 50%;
+        }
+
+        /* Image Banner */
+        .image-banner {
+            padding: 0 50px 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-banner img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--surface);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5v14M22 10v4M7 5v14M2 10v4"/>
+            </svg>
+            Audio Forensic <span>Toolkit</span>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Digital <span class="highlight">Audio Notary</span></h1>
+            <p>In an era of high-fidelity deepfakes and audio-based fraud (vishing), manipulated evidence is becoming indistinguishable from reality. We provide the definitive Trust Audit.</p>
+            
+            <a href="{{url_for('upload')}}" class="btn">
+                Initiate Trust Audit 
+                <span>&rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="details-grid">
+        <div class="card">
+            <h3>The Deepfake Threat</h3>
+            <p>Current solutions are failing because they look only at the AI signature or only at the file metadata. Threat actors are bypassing these single-layered defenses, leaving institutions vulnerable to sophisticated vishing attacks.</p>
+        </div>
+        <div class="card">
+            <h3>Biological Signature</h3>
+            <p>Our hybrid tool analyzes the micro-fluctuations and natural acoustic properties of the human vocal tract, ensuring the voice originates from a living human rather than a synthesized model.</p>
+        </div>
+        <div class="card">
+            <h3>Digital Integrity</h3>
+            <p>Beyond the voice, we conduct a deep forensic dive into the file's container, metadata, and encoding history to detect tampering, splicing, or synthetic generation artifacts.</p>
+        </div>
+    </section>
+
+    <section class="image-banner">
+       <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop" alt="Cyber Security Digital Lock">
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Team | HackFest 1.0 Submission</p>
+    </footer>
+
+</body>
+</html>
