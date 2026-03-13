@@ -30,6 +30,6 @@ Currently, this model is trained to detect *digital* fingerprints left behind by
 If an AI-generated voice is played out of a physical speaker and re-recorded with a microphone (a **Replay Attack**), the physical acoustic environment (speaker distortion, room reverb, microphone hardware) acts as a filter, scrubbing away the pristine digital AI markers. For the highest accuracy, please upload **original digital files** rather than physical re-recordings.
 
 🤝 Project Contributors
-Pranav Bellakki - Backend Integration & DevOps
-Kiran Hooli -  Core logic & UI Design
+Pranav Bellakki - Backend Integration & DevOps,
+Kiran Hooli -  Core logic & UI Design,
 Sunil G K - frontend Integration 
